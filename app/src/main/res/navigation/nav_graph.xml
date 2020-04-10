@@ -9,5 +9,19 @@
         android:id="@+id/firstFragment"
         android:name="edu.uw.tcss450.uwnetid.FirstFragment"
         android:label="fragment_first"
-        tools:layout="@layout/fragment_first" />
+        tools:layout="@layout/fragment_first" >
+        <action
+            android:id="@+id/action_firstFragment_to_colorFragment"
+            app:destination="@id/colorFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/colorFragment"
+        android:name="edu.uw.tcss450.uwnetid.ColorFragment"
+        android:label="fragment_color"
+        tools:layout="@layout/fragment_color" >
+        <argument
+            android:name="color"
+            app:argType="integer" />
+    </fragment>
 </navigation>
