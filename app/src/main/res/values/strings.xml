@@ -3,7 +3,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="button_first_red">Red Fragment</string>
-    <string name="button_first_green">Green Fragment</string>
+    <string name="button_first_red">UW Purple</string>
+    <string name="button_first_green">UW Gold</string>
     <string name="button_first_blue">Blue Fragment</string>
 </resources>
