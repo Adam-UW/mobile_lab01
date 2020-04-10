@@ -10,13 +10,13 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:paddingTop="35mm"
         android:text="Phish App"
         android:textAlignment="center"
         android:textColor="@color/pink"
         android:textSize="28dp"
-        android:paddingTop="35mm"
-        tools:layout_editor_absoluteX="95dp"
-        tools:layout_editor_absoluteY="0dp" />
+        app:layout_constraintBaseline_toBaselineOf="@+id/email_view"
+        tools:layout_editor_absoluteX="0dp" />
 
     <EditText
         android:id="@+id/email_view"
@@ -26,7 +26,7 @@
         android:hint="Email"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.787"
+        app:layout_constraintVertical_bias="0.728"
         tools:layout_editor_absoluteX="0dp" />
 
     <EditText
