@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -66,6 +67,15 @@ public class FirstFragment extends Fragment implements View.OnClickListener {
         Log.d("ACTIVITY", "Red: " + Color.red(color)+
                 "Green: "+ Color.green(color)+
                 "Blue: "+ Color.blue(color));
+
+        //The following object represents the action from first to color.
+        FirstFragmentDirections.ActionFirstFragmentToColorFragment directions =
+                FirstFragmentDirections.actionFirstFragmentToColorFragment(color);
+
+        //Use the navigate method to perform the navigation.
+        Navigation.findNavController(getView()).navigate(directions);
+
+
     }
 
 
