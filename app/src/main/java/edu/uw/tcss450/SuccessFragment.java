@@ -6,7 +6,10 @@ import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,6 +21,7 @@ import edu.uw.tcss450.databinding.FragmentSuccessBinding;
 
 public class SuccessFragment extends Fragment {
     private FragmentSuccessBinding binding;
+    private static final String TAG = "SuccessFragment";
 
     public SuccessFragment() {
         // Required empty public constructor
@@ -46,9 +50,4 @@ public class SuccessFragment extends Fragment {
     }
 
 
-//    public void updateContent(int color){
-//        TextView tv = getActivity().findViewById(R.id.text_color_label);
-//        tv.setTextColor(color);
-//
-//    }
 }

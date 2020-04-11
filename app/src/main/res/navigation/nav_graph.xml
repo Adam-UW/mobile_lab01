@@ -22,6 +22,12 @@
         <action
             android:id="@+id/action_registerFragment_to_successFragment"
             app:destination="@id/successFragment" />
+        <argument
+            android:name="email_from_login"
+            app:argType="string" />
+        <argument
+            android:name="password_from_login"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/successFragment"

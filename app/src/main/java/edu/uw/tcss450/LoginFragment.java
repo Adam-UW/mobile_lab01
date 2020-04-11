@@ -51,12 +51,16 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
     }
 
     public void jumpLogin(View view){
+        String str_email = binding.emailView.getText().toString();
+        String str_pass = binding.passView.getText().toString();
 
-        NavController navController= Navigation.findNavController(view);
-        navController.navigate(R.id.action_loginFragment_to_registerFragment);
+//        NavController navController= Navigation.findNavController(view);
+//        navController.navigate(R.id.action_loginFragment_to_registerFragment());
+        LoginFragmentDirections.ActionLoginFragmentToRegisterFragment directions=
+                LoginFragmentDirections.actionLoginFragmentToRegisterFragment(str_email, str_pass);
+
+        Navigation.findNavController(getView()).navigate(directions);
     }
-
-
 
 
     @Override
