@@ -14,10 +14,20 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        /**
+         * If the one in Success fragment called, to exit the fragment right away
+         */
+//        if(getIntent().getBooleanExtra("LOGOUT", false)){
+//            finish();
+//        }
     }
 
     @Override
     public void onBackPressed() {
+//        if(getIntent().getBooleanExtra("LOGOUT", false)){
+//            finish();
+//        }
         super.onBackPressed();
         //finish();
     }

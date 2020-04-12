@@ -43,9 +43,18 @@ public class RegisterFragment extends Fragment {
 
         if(!isFrag()){
             binding.register2.setOnClickListener(button -> jumpLoginEmpty(view));
+        }else{
+            binding.register2.setOnClickListener(button -> jumpLogin(view, binding.emailView.getText().toString(),
+                    binding.passView.getText().toString()));
         }
     }
 
+    /**
+     * A simple {@link RegisterFragment} subclass.
+     * Return Ture if the arguments have received
+     * False Arguments have not reveived
+     * @Author: ADAM SHANDI
+     */
     private boolean isFrag(){
         Log.d("args VALUEEE",  "PROGRAM IS FIRST LINE IN FRAG ");
 
@@ -76,7 +85,7 @@ public class RegisterFragment extends Fragment {
         else if(str_email.isEmpty()|| str_pass.isEmpty()){
             Toast.makeText(getContext(), "Please type something", Toast.LENGTH_SHORT).show();
         }
-//        else if(!str_pass.equals(pass_again)){
+//        else if(!str_pass.equals(binding.passAgain.getText().toString())){
 //            Toast.makeText(getContext(), "pass not equal", Toast.LENGTH_SHORT).show();
 //        }
         else{

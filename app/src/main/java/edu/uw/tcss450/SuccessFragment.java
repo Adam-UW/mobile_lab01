@@ -1,5 +1,6 @@
 package edu.uw.tcss450;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.OnBackPressedCallback;
@@ -47,6 +48,15 @@ public class SuccessFragment extends Fragment {
 
         //Set the text color of the label . NOTE no need to cast
         binding.textColorLabel.setText(args.getEmail());
+
+        /**
+         * {@EXIT THE FRAGMENT RIGHT AWAY -> IMPORTANT -> ADAM
+         */
+//        Intent intent = new Intent(getActivity(), MainActivity.class);
+//        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+//        intent.putExtra("LOGOUT", true);
+//        startActivity(intent);
+//        getActivity().finish();
     }
 
 
