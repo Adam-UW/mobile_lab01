@@ -29,6 +29,8 @@ public class SuccessFragment extends Fragment {
     }
 
 
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -49,6 +51,7 @@ public class SuccessFragment extends Fragment {
         //Set the text color of the label . NOTE no need to cast
         binding.textColorLabel.setText(args.getEmail());
 
+
         /**
          * {@EXIT THE FRAGMENT RIGHT AWAY -> IMPORTANT -> ADAM
          */
@@ -57,6 +60,14 @@ public class SuccessFragment extends Fragment {
 //        intent.putExtra("LOGOUT", true);
 //        startActivity(intent);
 //        getActivity().finish();
+    }
+
+    /**
+     * Could handle back press.
+     * @return true if back press was handled
+     */
+    public boolean onBackPressed() {
+        return false;
     }
 
 

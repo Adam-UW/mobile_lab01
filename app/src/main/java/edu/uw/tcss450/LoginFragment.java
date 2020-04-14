@@ -155,22 +155,26 @@ public class LoginFragment extends Fragment implements View.OnClickListener {
 
           if(!str_email.contains("@")){
             Toast.makeText(getContext(), "email must be valid with @something and not empty", Toast.LENGTH_SHORT).show();
+            //  binding.emailView.setError("email must be valid with @something and not empty");
             flag=false;
             return false;
         }
         if(str_pass.isEmpty()){
             Toast.makeText(getContext(), "password must not be empty", Toast.LENGTH_SHORT).show();
+           // binding.passView.setError("password must not be empty");
             flag=false;
             return false;
         }
         if(!isValidPassword(str_pass)) {
             Toast.makeText(getContext(), "password must be strong", Toast.LENGTH_SHORT).show();
+          //  binding.passView.setError("password must  be strong");
             flag=false;
             return false;
         }
 
          if(str_email.length() <5){
             Toast.makeText(getContext(), "email must be at least 5 characters", Toast.LENGTH_SHORT).show();
+           //  binding.passView.setError("email must be at least 5 characters");
             flag=false;
             return false;
         }

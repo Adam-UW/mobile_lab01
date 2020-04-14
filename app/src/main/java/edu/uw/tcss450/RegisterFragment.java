@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import edu.uw.tcss450.databinding.FragmentLoginBinding;
@@ -41,7 +42,7 @@ public class RegisterFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 
-        if(!isFrag()){
+        if(isFrag()){
             binding.register2.setOnClickListener(button -> jumpLoginEmpty(view));
         }else{
             binding.register2.setOnClickListener(button -> jumpLogin(view, binding.emailView.getText().toString(),
@@ -54,18 +55,15 @@ public class RegisterFragment extends Fragment {
      * Return Ture if the arguments have received
      * False Arguments have not reveived
      * @Author: ADAM SHANDI
+     * @return  if the values passed from a sender fragment are empty or not
      */
     private boolean isFrag(){
-        Log.d("args VALUEEE",  "PROGRAM IS FIRST LINE IN FRAG ");
-
         RegisterFragmentArgs args = RegisterFragmentArgs.fromBundle(getArguments());
-        Log.d("args VALUEEE", args+ " ");
         binding.emailView.setText(args.getEmailFromLogin());
         binding.passView.setText(args.getPasswordFromLogin());
-        binding.passAgain.setText(args.getPasswordFromLogin());
-        boolean flag = args.getEmailFromLogin().isEmpty() && args.getPasswordFromLogin().isEmpty();
+       // binding.passAgain.setText(args.getPasswordFromLogin());
 
-        Log.d("check is Frag", flag + "");
+
         return (args.getEmailFromLogin().isEmpty() && args.getPasswordFromLogin().isEmpty());
     }
 
@@ -83,7 +81,7 @@ public class RegisterFragment extends Fragment {
             Toast.makeText(getContext(), "Please type your email correctly with ->  @", Toast.LENGTH_SHORT).show();
         }
         else if(str_email.isEmpty()|| str_pass.isEmpty()){
-            Toast.makeText(getContext(), "Please type something", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "Please type something for pa", Toast.LENGTH_SHORT).show();
         }
 //        else if(!str_pass.equals(binding.passAgain.getText().toString())){
 //            Toast.makeText(getContext(), "pass not equal", Toast.LENGTH_SHORT).show();
@@ -99,15 +97,17 @@ public class RegisterFragment extends Fragment {
     }
 
     public void jumpLoginEmpty(View view){
+
         String str = binding.emailView.getText().toString();
         String pass = binding.passView.getText().toString();
         String pass_again = binding.passAgain.getText().toString();
 
 
+
         if(!str.contains("@")&& (!str.isEmpty())){
             Toast.makeText(getContext(), "Please type your email correctly with ->  @", Toast.LENGTH_SHORT).show();
         }
-        else if(str.isEmpty()|| pass.isEmpty() || pass_again.isEmpty()){
+        else if(str.isEmpty()|| pass.isEmpty() || pass_again.isEmpty()&& (!pass_again.isEmpty())){
             Toast.makeText(getContext(), "Please type something for password field", Toast.LENGTH_SHORT).show();
         }
         else if(!pass.equals(pass_again)){
