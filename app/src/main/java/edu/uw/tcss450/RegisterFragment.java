@@ -81,11 +81,11 @@ public class RegisterFragment extends Fragment {
             Toast.makeText(getContext(), "Please type your email correctly with ->  @", Toast.LENGTH_SHORT).show();
         }
         else if(str_email.isEmpty()|| str_pass.isEmpty()){
-            Toast.makeText(getContext(), "Please type something for pa", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "Please type something for password", Toast.LENGTH_SHORT).show();
         }
-//        else if(!str_pass.equals(binding.passAgain.getText().toString())){
-//            Toast.makeText(getContext(), "pass not equal", Toast.LENGTH_SHORT).show();
-//        }
+        else if(!str_pass.equals(binding.passAgain.getText().toString())){
+            Toast.makeText(getContext(), "pass not match up", Toast.LENGTH_SHORT).show();
+        }
         else{
             RegisterFragmentDirections.ActionRegisterFragmentToSuccessFragment directions =
                     RegisterFragmentDirections.actionRegisterFragmentToSuccessFragment(str_email, "");
@@ -111,7 +111,7 @@ public class RegisterFragment extends Fragment {
             Toast.makeText(getContext(), "Please type something for password field", Toast.LENGTH_SHORT).show();
         }
         else if(!pass.equals(pass_again)){
-            Toast.makeText(getContext(), "pass not equal", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), "pass not match up", Toast.LENGTH_SHORT).show();
         }
         else{
             RegisterFragmentDirections.ActionRegisterFragmentToSuccessFragment directions =
